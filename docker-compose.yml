@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: adopet
+    restart: unless-stopped
+    ports:
+      - "3308:3306"
+    environment:
+       MYSQL_DATABASE: adopet
+       MYSQL_ROOT_PASSWORD: 1q2w3e4r         
+      
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
